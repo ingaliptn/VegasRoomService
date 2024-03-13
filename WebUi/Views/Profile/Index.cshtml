@@ -1,0 +1,142 @@
+﻿@using Domain.Models
+@model WebUi.Controllers.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+<div class="inner_container">
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Escort @Model.EscortName</li>
+        </ol>
+    </div>
+    <div class="inner_container_area">
+        <div class="profile_page_title">
+            <h1>@Model.EscortName</h1>
+        </div>
+        <div class="profile_page_container">
+            <div class="profile_page_header">
+                <div class="model_title">
+                    <h4>Overview</h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="profile_page_padding">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-3">
+                        <div class="let_col_container">
+                            <div class="about_model">
+                                @*<div class="featured_seal">Asian</div>*@
+                                <h5>About @Model.EscortName</h5>
+                                <p>@Html.Raw(Model.Description)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="profile_photo_display_block">
+                            <div class="profile_preview_img">
+                                <img class="img-responsive" src="/images/escorts/@Model.FileImages.First().FileName" alt="@Model.EscortName"
+                                     title="@Model.EscortName" />
+                            </div>
+                            <div class="thumb_img">
+                                @foreach (var p in @Model.FileImages)
+                                {
+                                    <a class="fancybox" data-fancybox-group="escorts"
+                                       href="/images/escorts/@p.FileName">
+                                        <img src="/images/escorts/@p.FileName"
+                                             alt="@Model.EscortName" title="@Model.EscortName"
+                                             width="89"
+                                             class="img-responsive" />
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="profile_information">
+                            <h5>About Cindy</h5>
+                            <table class="table">
+                                <tr>
+                                    <td><span>Age:</span></td>
+                                    <td>@Model.Age</td>
+                                </tr>
+                                <tr>
+                                    <td width="30%"><span>Nationality:</span></td>
+                                    <td width="70%">@Model.Nationality</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Statistics:</span></td>
+                                    <td>@Model.Statistics</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Height:</span></td>
+                                    <td>@Model.Height</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Weight:</span></td>
+                                    <td>@Model.Weight lbs</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Hair Colour:</span></td>
+                                    <td>@Model.Hair</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Languages:</span></td>
+                                    <td>@Model.Languages</td>
+                                </tr>
+                                @*<tr>
+                                    <td><span>Phone:</span></td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>Email:</span></td>
+                                    <td>
+                                    </td>
+                                </tr>*@
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="location_map_block">
+                </div>
+                <!-- see also -->
+                <div class="main_container featured_escort">
+                    <div class="see_also_block">
+                        <h2><span>We</span> Recommend</h2>
+                    </div>
+                    @foreach (var p in Model.List)
+                    {
+                        var fileName = p.FileImages.First().FileName;
+                        var refName = $"{p.EscortName.ToLower()}.php";
+
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="escort_display">
+                                <div class="image_wrapper">
+                                    <a href="/escorts/@refName">
+                                        <div class="escort_img">
+                                            <img class="img-responsive" src="/images/escorts/@fileName"
+                                                 alt="@p.EscortName"
+                                                 title="@p.EscortName" />
+                                        </div>
+                                        <div class="escort_name">@p.EscortName</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!-- see also -->
+                    <div class="ad_banner_block">
+                        <a href="http://www.escortsaroundyou.com" target="_blank">
+                            <img src="/images/eay_ad.gif"
+                                 alt="Escorts Around You" title="Escorts Around You" class="img-responsive" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

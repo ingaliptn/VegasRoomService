@@ -1,0 +1,31 @@
+User-agent: *
+
+Allow: /*.js
+Allow: /*.css
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.png
+Allow: /fancybox
+Disallow: /Connections
+Disallow: /docs
+Disallow: /include
+Disallow: /inventory
+Disallow: /tmp
+Disallow: /load
+Disallow: /404.php
+Disallow: /asian-escorts.php
+Disallow: /blocked.php
+Disallow: /casting.php
+Disallow: /ebony-escorts.php
+Disallow: /faq.php
+Disallow: /russian-escorts.php
+Disallow: /class.phpmailer.php
+Disallow: /class.pop3.php
+Disallow: /class.smtp.php
+Disallow: /thankyou.php
+Disallow: /send_booking.php
+Disallow: /send_contact.php
+Disallow: /send_join.php
+Disallow: /strip.php
+
+Sitemap: http://www.vegasroomservice.com/sitemap.xml
